@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Click Scorer</title>
+    <meta name="description" content="Fast-paced click speed test to compete and measure your clicks per second (CPS)." />
+    <meta property="og:title" content="Click Scorer" />
+    <meta property="og:description" content="Fast-paced click speed test to compete and measure your clicks per second (CPS)." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="mainHeader">
+      <div class="brand">
+        <h1>Click Scorer</h1>
+        <span>Speed Test</span>
+      </div>
+
+      <div class="mode-selector">
+        <button class="mode-btn active" data-time="5">5s</button>
+        <button class="mode-btn" data-time="10">10s</button>
+        <button class="mode-btn" data-time="30">30s</button>
+      </div>
+
+      <button id="soundBtn" class="icon-btn" title="Toggle Sound">
+        <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Main -->
+    <main id="mainContainer">
+      <div id="playingView">
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+        <div class="game-area">
+          <div id="idleState">
+            <div class="idle-title">Click anywhere to start</div>
+            <div class="idle-subtitle">Press Spacebar or tap screen</div>
+          </div>
+
+          <div id="runningState" style="display: none;">
+            <div id="liveClicks" class="click-count">0</div>
+            <div class="live-label">Live Count</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div id="resultsCard" class="results-card" onclick="event.stopPropagation()">
+        <span class="results-tag">Test Finished</span>
+        <h2 class="results-title">Your Score</h2>
+
+        <div class="stats-grid">
+          <div class="stat-col">
+            <span class="stat-label">Clicks</span>
+            <span id="resClicks" class="stat-val">0</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-label">CPS</span>
+            <span id="resCps" class="stat-val">0.0</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-label">Best</span>
+            <span id="resBest" class="stat-val">0</span>
+          </div>
+        </div>
+
+        <button id="tryAgainBtn" class="btn-restart">Try Again</button>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
