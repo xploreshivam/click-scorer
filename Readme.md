@@ -66,4 +66,4 @@ No build step, package manager, or local server is required.
 
 ---
 
-# <i>thanks to checking this project out! If you find it useful, feel free to give it a ⭐ on GitHub.<i>
+# <i>thanks to checking this project out!.<i>
